@@ -9,6 +9,9 @@ radius = 27.0185
 
 [node name="PlayerWellRounded" instance=ExtResource("1_xungh")]
 script = ExtResource("2_i0rm5")
+dash_duration = 0.5
+dash_speed_multi = 2.5
+dash_cooldown = 1.0
 
 [node name="Sprite" parent="Visuals" index="1"]
 texture = ExtResource("2_pgd7o")
@@ -16,3 +19,9 @@ texture = ExtResource("2_pgd7o")
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(1, -33)
 shape = SubResource("CircleShape2D_pgd7o")
+
+[node name="DashTimer" type="Timer" parent="." index="3"]
+
+[node name="DashCooldownTimer" type="Timer" parent="." index="4"]
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
