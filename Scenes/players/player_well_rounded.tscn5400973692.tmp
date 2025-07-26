@@ -22,19 +22,14 @@ stats = ExtResource("3_wmypj")
 
 [node name="Trail" type="Line2D" parent="Visuals" index="0" node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
-top_level = true
-position = Vector2(1, -33)
+position = Vector2(-2, -64)
 points = PackedVector2Array(-280, 0, 0, 0)
 width = 60.0
 width_curve = SubResource("Curve_3wset")
 script = ExtResource("4_ukk6y")
 player = NodePath("../..")
 
-[node name="Shadow" parent="Visuals" index="1"]
-z_index = 1
-
 [node name="Sprite" parent="Visuals" index="2"]
-z_index = 1
 texture = ExtResource("2_pgd7o")
 
 [node name="CollisionShape2D" parent="." index="1"]
