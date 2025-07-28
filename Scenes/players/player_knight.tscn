@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn8atgo3326d"]
+
+[ext_resource type="PackedScene" uid="uid://du1228a0klk8h" path="res://Scenes/players/player_well_rounded.tscn" id="1_b1vs5"]
+[ext_resource type="Texture2D" uid="uid://bt0lww88864ws" path="res://assets/sprites/Players/Player_5.png" id="2_5ihce"]
+[ext_resource type="Resource" uid="uid://bc142bmrlny7b" path="res://resources/units/players/stats_player_knight.tres" id="2_fvn5p"]
+
+[node name="PlayerKnight" instance=ExtResource("1_b1vs5")]
+stats = ExtResource("2_fvn5p")
+
+[node name="Sprite" parent="Visuals" index="2"]
+texture = ExtResource("2_5ihce")
