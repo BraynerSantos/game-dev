@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://x187r4whtpgs"]
+
+[ext_resource type="PackedScene" uid="uid://d3c4o6gi6fpmw" path="res://Scenes/unit.tscn" id="1_l0q3m"]
+[ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://assets/sprites/Enemies/Enemy_1.png" id="2_7ml68"]
+[ext_resource type="Script" uid="uid://b3nlcyu1st78l" path="res://Scenes/enemy/enemy.gd" id="2_pwopj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwopj"]
+radius = 150.0
+
+[node name="EnemyChaserSlow" instance=ExtResource("1_l0q3m")]
+script = ExtResource("2_pwopj")
+flock_push = 20.0
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_7ml68")
+
+[node name="VisionArea" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" index="0"]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_pwopj")

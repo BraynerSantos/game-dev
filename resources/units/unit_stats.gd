@@ -4,7 +4,7 @@ class_name UnitStats
 
 enum UnitType {
 	PLAYER,
-	EMEMY
+	ENEMY
 }
 
 @export var name: String
