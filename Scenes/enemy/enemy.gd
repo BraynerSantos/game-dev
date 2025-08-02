@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 		return	
 		
 	position += get_move_direction() * stats.speed * delta
+	update_rotation()
 
 
 func get_move_direction() -> Vector2:
@@ -29,6 +30,21 @@ func get_move_direction() -> Vector2:
 			
 	return direction
 		
+		
+		
+		
+func update_rotation() -> void:
+		if not is_instance_valid(Global.player):
+			return
+			
+		var player_pos := Global.player.global_position
+		var moving_right := global_position.x < player_pos.x
+		visuals.scale = Vector2(-.5,.5) if\
+		moving_right else Vector2(.5,0.5)
+			
+			
+			
+
 func can_move_towards_player()-> bool:
 	return is_instance_valid(Global.player) and\
 	global_position.distance_to(Global.player.global_position) > 60
